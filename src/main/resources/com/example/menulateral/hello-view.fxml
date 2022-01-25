@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" snapToPixel="false" style="-fx-background-color: blue;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menulateral.MenuController">
+   <children>
+      <HBox layoutX="-82.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: blue;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-82.0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="menuBox" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="80.0" minHeight="-Infinity" minWidth="80.0" style="-fx-background-color: green;" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button id="boton1" fx:id="panel1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%boton1" />
+                  <Button id="boton2" fx:id="panel2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%boton2" />
+               </children>
+            </VBox>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" style="-fx-background-color: blue;" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button id="boton3" fx:id="menu" maxHeight="1.7976931348623157E308" mnemonicParsing="false">
+                     <graphic>
+                        <FontIcon iconLiteral="bi-list" />
+                     </graphic>
+                  </Button>
+                  <fx:include fx:id="informacionAnidada" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" source="info-view.fxml" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,21 @@
+#boton1,#boton2,#boton3{
+    -fx-background-color: #0ab1b1;
+    -fx-border-radius: 130;
+    -fx-background-radius: 130;
+    -fx-alignment: center;
+}
+
+#boton1:hover,#boton2:hover,#boton3:hover{
+    -fx-background-color: #04635f;
+    -fx-border-color: yellow;
+    -fx-border-style: dashed;
+    -fx-font-weight: bold;
+}
+
+#texto:hover{
+    -fx-text-fill: orange;
+}
+
+#panel1,#panel2{
+    -fx-alignment: center;
+}
