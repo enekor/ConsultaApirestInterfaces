@@ -1,14 +1,12 @@
 package com.example.menulateral.Model;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.scene.image.Image;
 
 public class Person {
 
     private StringProperty nombre;
-    private StringProperty edad;
+    private IntegerProperty edad;
     private ObjectProperty<Image> imagen;
 
     public String getNombre() {
@@ -23,15 +21,15 @@ public class Person {
         this.nombre.set(nombre);
     }
 
-    public String getEdad() {
+    public Integer getEdad() {
         return edad.get();
     }
 
-    public StringProperty edadProperty() {
+    public IntegerProperty edadProperty() {
         return edad;
     }
 
-    public void setEdad(String edad) {
+    public void setEdad(Integer edad) {
         this.edad.set(edad);
     }
 
@@ -47,9 +45,9 @@ public class Person {
         this.imagen.set(imagen);
     }
 
-    public Person(String nombre, String edad) {
+    public Person(String nombre, Integer edad) {
         this.nombre = new SimpleStringProperty(nombre);
-        this.edad = new SimpleStringProperty(edad);
+        this.edad = new SimpleIntegerProperty(edad);
         this.imagen = null;
     }
 

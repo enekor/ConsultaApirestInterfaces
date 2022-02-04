@@ -1,21 +1,47 @@
-#boton1,#boton2,#boton3{
-    -fx-background-color: #0ab1b1;
+#menu,#boton2{
+    -fx-background-color: #557474;
     -fx-border-radius: 130;
     -fx-background-radius: 130;
-    -fx-alignment: center;
+    -fx-text-fill: white;
 }
 
-#boton1:hover,#boton2:hover,#boton3:hover{
-    -fx-background-color: #04635f;
-    -fx-border-color: yellow;
+#menu:hover,#boton2:hover{
+    -fx-background-color: #a5c2c1;
+    -fx-border-color: black;
     -fx-border-style: dashed;
     -fx-font-weight: bold;
 }
 
-#texto:hover{
+#boton1{
+    -fx-background-color: #4e4d4d;
+    -fx-text-fill: white;
+
+}
+
+#boton1:hover{
+    -fx-background-color: #6a6161;
+}
+
+#hover:hover{
     -fx-text-fill: orange;
 }
 
-#panel1,#panel2{
-    -fx-alignment: center;
+#hover{
+    -fx-background-color:#4e4d4d ;
+    -fx-text-fill: black;
+}
+
+#fondo1,#fondo3{
+    -fx-background-color: #979797;
+}
+
+#fondo2{
+    -fx-background-color: #4e4d4d;
+    -fx-effect: DropShadow(gaussian,#555555,5,0.5,0,0);
+}
+
+#separador{
+    -fx-border-color: #1c1c1c;
+    -fx-background-color: #1c1c1c;
+    -fx-pref-width: 1;
 }

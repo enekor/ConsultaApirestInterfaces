@@ -1,4 +1,4 @@
 package com.example.menulateral.rest;
 
-public class AccesoARest {
+public class RestToModel {
 }

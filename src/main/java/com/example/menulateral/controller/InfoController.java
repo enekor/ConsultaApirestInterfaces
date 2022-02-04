@@ -1,4 +1,4 @@
-package com.example.menulateral;
+package com.example.menulateral.controller;
 
 import com.example.menulateral.Model.Person;
 import javafx.fxml.FXML;
@@ -10,21 +10,19 @@ import javafx.scene.text.Text;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class InfoController implements Initializable {
-    @FXML private Button button;
     @FXML private Text text;
-    @FXML private ImageView image;
+    @FXML private ImageView image,imagen;
 
     private Person p = new Person();
 
+    public void setText(String texto){
+        text.setText(texto);
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        button.setOnMouseClicked(v->{
-            p = new Person("Juana","98");
-
-            text.setText("Su nombre es "+p.getNombre()+" y tiene "+p.getEdad());
-        });
     }
 }
