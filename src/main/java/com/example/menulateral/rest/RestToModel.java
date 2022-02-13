@@ -11,7 +11,7 @@ public class RestToModel {
     private PersonaMapper mapper = new PersonaMapper();
     private CrudRest crud = Config.getService();
 
-    private Persona getPerson() throws Exception {
+    public Persona getPerson() throws Exception {
         Persona person = null;
         Response<Person> res = crud.getPerson().execute();
         if(res.body() != null) {
@@ -23,21 +23,7 @@ public class RestToModel {
         return person;
     }
 
-    public void setPersons(){
-        PersonList lista = PersonList.getInstance();
-        for (int i = 0;i<10;i++){
-            try {
-                lista.addPerson(getPerson());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    public static void main(String[] args){
-        try {
-            System.out.println(new RestToModel().getPerson());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public void setPersona(Persona p){
+        PersonList.getInstance().addPerson(p);
     }
 }

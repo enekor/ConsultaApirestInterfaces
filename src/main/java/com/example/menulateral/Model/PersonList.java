@@ -1,11 +1,10 @@
 package com.example.menulateral.Model;
 
-import com.example.menulateral.Model.restmodel.Person;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class PersonList {
-    private List<Persona> personas;
+    private List<Persona> personas = new ArrayList<>();
 
     private static PersonList list = null;
     private PersonList(){}

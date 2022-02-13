@@ -60,6 +60,7 @@ public class MenuController implements Initializable {
             }
         });
         home.setOnMouseClicked(x->{
+            System.out.println("boton 3");
             pantalla1.setVisible(false);
             pantalla2.setVisible(false);
             home.setVisible(true);
