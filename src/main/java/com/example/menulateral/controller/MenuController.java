@@ -63,8 +63,6 @@ public class MenuController implements Initializable {
     }
 
     private void animacion(){
-        System.out.println("menu lateral " + menuLateral.getTranslateX());
-        System.out.println("boton "+menu.getTranslateX());
         if(abierto){
             animacion = new TranslateTransition(Duration.millis(DURACION_ANIMACION),menuLateral.getParent());
             animacion.setFromX(menuLateral.getMaxWidth());

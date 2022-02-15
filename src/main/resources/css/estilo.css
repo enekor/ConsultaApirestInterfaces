@@ -43,3 +43,7 @@
     -fx-background-color: #1c1c1c;
     -fx-pref-width: 1;
 }
+
+#fondo{
+    -fx-background-color: #ffffff;
+}
