@@ -20,23 +20,19 @@ import java.util.ResourceBundle;
 @Data
 public class HomeController implements Initializable {
 
-    @FXML private Button refrescar;
     @FXML private ListView lista;
     final ObservableList<Persona> listPerson =  FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        refrescar.setOnMouseClicked(x->{
-            refrescar();
-            setTable();
-        });
+        refrescar();
+        setTable();
     }
 
     private void refrescar(){
         RestToModel rest = new RestToModel();
-        for (int i = 0;i<3;i++){
+        while(PersonList.getInstance().getPersons().size()<20){
             try {
                 rest.setPersona(rest.getPerson());
             } catch (Exception e) {

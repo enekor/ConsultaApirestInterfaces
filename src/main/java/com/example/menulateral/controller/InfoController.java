@@ -1,6 +1,6 @@
 package com.example.menulateral.controller;
 
-import com.example.menulateral.Model.Persona;
+import com.example.menulateral.Model.Intercambio;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
@@ -13,10 +13,9 @@ public class InfoController implements Initializable {
     @FXML private Text text;
     @FXML private ImageView image;
 
-    private Persona p = new Persona();
-
-    public void setText(String texto){
-        text.setText(texto);
+    public void initInfo(){
+        text.setText(Intercambio.getInstance().getPersona().toString2());
+        //imagen
     }
 
     @Override

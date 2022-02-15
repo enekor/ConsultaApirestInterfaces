@@ -1,11 +1,9 @@
-#menu,#boton2{
+#menu{
     -fx-background-color: #557474;
-    -fx-border-radius: 130;
-    -fx-background-radius: 130;
     -fx-text-fill: white;
 }
 
-#menu:hover,#boton2:hover{
+#menu:hover{
     -fx-background-color: #a5c2c1;
     -fx-border-color: black;
     -fx-border-style: dashed;

@@ -3,108 +3,92 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" snapToPixel="false" stylesheets="@../../../css/estilo.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menulateral.controller.MenuController">
    <children>
-      <StackPane layoutX="-80.0" layoutY="-9.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox id="fondo3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <VBox id="fondo2" fx:id="menuLateral" maxHeight="1.7976931348623157E308" maxWidth="80.0" minHeight="-Infinity" minWidth="80.0" translateX="-80.0" StackPane.alignment="CENTER_LEFT">
                <children>
-                  <VBox id="fondo2" fx:id="menuBox" layoutX="-80.0" maxHeight="1.7976931348623157E308" maxWidth="80.0" minHeight="-Infinity" minWidth="80.0" translateX="-80.0" HBox.hgrow="ALWAYS">
-                     <children>
-                        <Button id="hover" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%hovertext">
-                           <graphic>
-                              <FontIcon id="hover" iconLiteral="bi-person" />
-                           </graphic>
-                        </Button>
-                        <Separator id="separador" maxWidth="1.7976931348623157E308">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Separator>
-                        <Button id="boton1" fx:id="homeButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%opcion1">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                           <graphic>
-                              <FontIcon iconLiteral="bi-option" />
-                           </graphic>
-                        </Button>
-                        <Button id="boton1" fx:id="info1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%opcion2">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                           <graphic>
-                              <FontIcon iconLiteral="bi-option" />
-                           </graphic>
-                        </Button>
-                        <Button id="boton1" fx:id="info2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%opcion3">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                           <graphic>
-                              <FontIcon iconLiteral="bi-option" />
-                           </graphic>
-                        </Button>
-                        <Separator id="separador" maxWidth="1.7976931348623157E308" prefWidth="200.0">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Separator>
-                        <Button id="boton1" layoutX="-80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%ajustes">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                           <graphic>
-                              <FontIcon iconLiteral="bi-tools" />
-                           </graphic>
-                        </Button>
-                        <Separator prefWidth="200.0">
-                           <VBox.margin>
-                              <Insets bottom="5.0" />
-                           </VBox.margin>
-                        </Separator>
-                        <Button id="boton1" fx:id="salir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%salir">
-                           <graphic>
-                              <FontIcon iconLiteral="bi-door-open" />
-                           </graphic>
-                        </Button>
-                     </children>
-                     <padding>
-                        <Insets top="5.0" />
-                     </padding>
-                  </VBox>
-                  <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="426.0">
-                     <children>
-                        <VBox id="fondo1" fx:id="home" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" StackPane.alignment="CENTER">
-                           <children>
-                              <fx:include fx:id="homeview" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" source="home-view.fxml" />
-                           </children>
-                        </VBox>
-                        <VBox id="fondo1" fx:id="pantalla1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" StackPane.alignment="CENTER">
-                           <children>
-                              <fx:include fx:id="informacionAnidada" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" source="info-view.fxml" />
-                           </children>
-                        </VBox>
-                        <VBox fx:id="pantalla2" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" StackPane.alignment="CENTER">
-                           <children>
-                              <ImageView fx:id="imagen" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-                              <Text fx:id="nombre" strokeType="OUTSIDE" strokeWidth="0.0" text="nombre" textAlignment="CENTER" textOrigin="CENTER" />
-                              <Text fx:id="correo" strokeType="OUTSIDE" strokeWidth="0.0" text="correo" textAlignment="CENTER" textOrigin="CENTER" />
-                              <Text fx:id="datos" strokeType="OUTSIDE" strokeWidth="0.0" text="otros datos" textAlignment="CENTER" textOrigin="CENTER" />
-                           </children>
-                        </VBox>
-                     </children>
-                  </StackPane>
+                  <Button id="hover" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%hovertext">
+                     <graphic>
+                        <FontIcon id="hover" iconLiteral="bi-person" />
+                     </graphic>
+                  </Button>
+                  <Separator id="separador" maxWidth="1.7976931348623157E308">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Button id="boton1" fx:id="homeButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%opcion1">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontIcon iconLiteral="bi-option" />
+                     </graphic>
+                  </Button>
+                  <Button id="boton1" fx:id="info1" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%opcion2">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontIcon iconLiteral="bi-option" />
+                     </graphic>
+                  </Button>
+                  <Button id="boton1" fx:id="info2" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%opcion3">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontIcon iconLiteral="bi-option" />
+                     </graphic>
+                  </Button>
+                  <Separator id="separador" maxWidth="1.7976931348623157E308" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Button id="boton1" layoutX="-80.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%ajustes">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                     <graphic>
+                        <FontIcon iconLiteral="bi-tools" />
+                     </graphic>
+                  </Button>
+                  <Separator prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
+                  </Separator>
+                  <Button id="boton1" fx:id="salir" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="%salir">
+                     <graphic>
+                        <FontIcon iconLiteral="bi-door-open" />
+                     </graphic>
+                  </Button>
                </children>
-            </HBox>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </VBox>
+            <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" translateY="25.0">
+               <children>
+                  <AnchorPane fx:id="home" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                     <fx:include fx:id="homeview" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" source="home-view.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  </AnchorPane>
+
+                  <AnchorPane fx:id="pantalla1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                     <fx:include fx:id="informacionAnidada" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" source="info-view.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     <AnchorPane fx:id="pantalla2" layoutX="-91.0" layoutY="-5.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
+                  </AnchorPane>
+
+               </children>
+            </StackPane>
             <Button id="menu" fx:id="menu" mnemonicParsing="false" StackPane.alignment="TOP_LEFT">
                <graphic>
                   <FontIcon id="menu" iconLiteral="bi-list" />
