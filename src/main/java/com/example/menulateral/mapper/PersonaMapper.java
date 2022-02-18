@@ -12,7 +12,7 @@ public class PersonaMapper {
         person.setBirth(res.dob.date.toString());
         person.setAge(String.valueOf(res.dob.age));
         person.setPhone(res.phone);
-        person.setPicture(res.picture.medium);
+        person.setPicture(res.picture.large);
         person.setNationality(res.nat);
         return  person;
     }

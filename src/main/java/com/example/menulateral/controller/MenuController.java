@@ -20,6 +20,7 @@ public class MenuController implements Initializable {
     @FXML private AnchorPane pantalla1,pantalla2,home;
     @FXML private InfoController informacionAnidadaController;
     @FXML private HomeController homeviewController;
+    @FXML private GraficosController graficosController;
 
     private final int DURACION_ANIMACION = 200;
     private TranslateTransition animacion;
@@ -42,6 +43,7 @@ public class MenuController implements Initializable {
                 pantalla1.setVisible(true);
                 home.setVisible(false);
                 informacionAnidadaController.initInfo();
+                animacion();
             }
         });
         info2.setOnMouseClicked(x->{
@@ -50,6 +52,8 @@ public class MenuController implements Initializable {
                 pantalla1.setVisible(false);
                 pantalla2.setVisible(true);
                 home.setVisible(false);
+                graficosController.initData();
+                animacion();
             }
         });
         homeButton.setOnMouseClicked(x->{
@@ -57,6 +61,7 @@ public class MenuController implements Initializable {
             pantalla1.setVisible(false);
             pantalla2.setVisible(false);
             home.setVisible(true);
+            animacion();
         });
 
         salir.setOnMouseClicked(x->System.exit(0));

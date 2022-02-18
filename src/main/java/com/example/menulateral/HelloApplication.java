@@ -15,9 +15,9 @@ public class HelloApplication extends Application {
         Locale locale = new Locale("es_Es");
         ResourceBundle bundle = ResourceBundle.getBundle("i18n.menu",locale);
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"),bundle);
-        Scene scene = new Scene(fxmlLoader.load(), 500, 550);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 550);
         stage.setTitle("Hello!");
-        stage.setMinWidth(500);
+        stage.setMinWidth(600);
         stage.setMinHeight(550);
         stage.setScene(scene);
         stage.show();
