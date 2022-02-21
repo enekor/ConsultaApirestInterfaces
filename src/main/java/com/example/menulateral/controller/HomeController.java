@@ -15,23 +15,28 @@ import javafx.scene.input.MouseEvent;
 import lombok.Data;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 @Data
 public class HomeController implements Initializable {
 
     @FXML private ListView lista;
-    final ObservableList<Persona> listPerson =  FXCollections.observableArrayList();
+    @FXML private Button refrescar;
+    final private ObservableList<Persona> listPerson =  FXCollections.observableArrayList();
 
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        refrescar();
-        setTable();
+        refrescar.setOnMouseClicked(v->{
+            refrescar();
+            setTable();
+        });
     }
 
     private void refrescar(){
         RestToModel rest = new RestToModel();
+        PersonList.getInstance().clearList();
         while(PersonList.getInstance().getPersons().size()<20){
             try {
                 rest.setPersona(rest.getPerson());
@@ -42,6 +47,9 @@ public class HomeController implements Initializable {
     }
 
     private void setTable(){
+        if (listPerson.size()==20){
+            listPerson.clear();
+        }
         listPerson.addAll(PersonList.getInstance().getPersons());
         lista.setItems(listPerson);
 

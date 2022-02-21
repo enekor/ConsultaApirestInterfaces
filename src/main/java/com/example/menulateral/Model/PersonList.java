@@ -24,4 +24,8 @@ public class PersonList {
     public List<Persona> getPersons(){
         return this.personas;
     }
+
+    public void clearList(){
+        this.personas.clear();
+    }
 }
