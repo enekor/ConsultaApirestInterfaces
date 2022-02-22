@@ -14,8 +14,8 @@
                <children>
                   <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <PieChart fx:id="edadPie" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Edad" StackPane.alignment="CENTER" />
-                        <PieChart fx:id="nacionalidadPie" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="Nacionalidad" StackPane.alignment="CENTER" />
+                        <PieChart fx:id="edadPie" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="%edad" StackPane.alignment="CENTER" />
+                        <PieChart fx:id="nacionalidadPie" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" title="%nacionalidad" StackPane.alignment="CENTER" />
                      </children>
                      <padding>
                         <Insets bottom="50.0" />

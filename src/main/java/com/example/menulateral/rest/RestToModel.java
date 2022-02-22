@@ -22,8 +22,4 @@ public class RestToModel {
         }
         return person;
     }
-
-    public void setPersona(Persona p){
-        PersonList.getInstance().addPerson(p);
-    }
 }

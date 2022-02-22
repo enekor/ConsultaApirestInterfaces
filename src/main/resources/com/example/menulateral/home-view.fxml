@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menulateral.controller.HomeController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.menulateral.controller.HomeController">
    <children>
       <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
+            <ImageView fx:id="espera" fitHeight="225.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
             <ListView fx:id="lista" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" />
             <Button fx:id="refrescar" maxHeight="25.0" minHeight="25.0" mnemonicParsing="false" text="%refrescar" translateY="-25.0" StackPane.alignment="TOP_RIGHT" />
-            <ImageView fx:id="espera" fitHeight="225.0" fitWidth="247.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
          </children>
       </StackPane>
    </children>

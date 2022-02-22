@@ -21,6 +21,8 @@ public class GraficosController implements Initializable {
     @FXML PieChart edadPie,nacionalidadPie;
     @FXML ChoiceBox<String> spinner;
     @FXML Button find;
+    private ObservableList<PieChart.Data> edad;
+    private ObservableList<PieChart.Data> region;
 
     public void initData(){
         System.out.println("estoy en los graficos");
@@ -31,15 +33,8 @@ public class GraficosController implements Initializable {
         regiones = PersonList.getInstance().getPersons().stream().map(v->v.getNationality()).collect(Collectors.toList());
 
 
-        ObservableList<PieChart.Data> edad =  toCountMap(edades);
-        ObservableList<PieChart.Data> region =  toCountMap(regiones);
-
-        edadPie.setData(edad);
-        nacionalidadPie.setData(region);
-
-        //https://www.youtube.com/watch?v=bpHmrgvpEDQ
-
-
+        edad =  toCountMap(edades);
+        region =  toCountMap(regiones);
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -72,10 +67,12 @@ public class GraficosController implements Initializable {
         if(spinner.getValue().equalsIgnoreCase("edades")){
             edadPie.setVisible(true);
             nacionalidadPie.setVisible(false);
+            edadPie.setData(edad);
         }
         else if(spinner.getValue().equalsIgnoreCase("nacionalidades")){
             edadPie.setVisible(false);
             nacionalidadPie.setVisible(true);
+            nacionalidadPie.setData(region);
         }
     }
 

@@ -3,6 +3,7 @@ package com.example.menulateral.controller;
 import com.example.menulateral.Model.Intercambio;
 import com.example.menulateral.Model.PersonList;
 import com.example.menulateral.Model.Persona;
+import com.example.menulateral.Model.restmodel.Person;
 import com.example.menulateral.rest.RestToModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,6 +18,9 @@ import javafx.scene.input.MouseEvent;
 import lombok.Data;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 @Data
 public class HomeController implements Initializable {
@@ -25,30 +29,32 @@ public class HomeController implements Initializable {
     @FXML private Button refrescar;
     @FXML private ImageView espera;
     final private ObservableList<Persona> listPerson =  FXCollections.observableArrayList();
+    RestToModel rest = new RestToModel();
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        espera.setImage(new Image("https://www.freeiconspng.com/thumbs/stop-sign-png/stop-sign-png-18.png"));
         refrescar.setOnMouseClicked(v->{
-            espera.setVisible(true);
-            try {
-                Thread.sleep(45);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            espera.setImage(new Image("https://www.freeiconspng.com/thumbs/stop-sign-png/stop-sign-png-18.png"));
+            System.out.println(lista.isVisible());
+            lista.setVisible(false);
+            System.out.println(lista.isVisible());
             refrescar();
-            setTable();
-            espera.setVisible(false);
+            lista.setVisible(true);
         });
     }
 
     private void refrescar(){
-        CargaDatos cd = new CargaDatos();
-        Thread t = new Thread(cd);
-        t.start();
-        while(t.isAlive()){
-            espera.setVisible(true);
+        PersonList.getInstance().clearList();
+
+        while(PersonList.getInstance().getPersons().size()<20){
+            try {
+                PersonList.getInstance().addPerson(rest.getPerson());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+        setTable();
     }
 
     private void setTable(){
@@ -65,22 +71,5 @@ public class HomeController implements Initializable {
                 Intercambio.getInstance().setPersona((Persona) lista.getSelectionModel().getSelectedItem());
             }
         });
-    }
-}
-
-class CargaDatos implements Runnable {
-
-    RestToModel rest = new RestToModel();
-
-    @Override
-    public void run() {
-        PersonList.getInstance().clearList();
-        while(PersonList.getInstance().getPersons().size()<20){
-            try {
-                rest.setPersona(rest.getPerson());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
     }
 }
