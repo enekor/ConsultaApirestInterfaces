@@ -68,11 +68,12 @@ public class GraficosController implements Initializable {
     }
 
     private void click(){
-        if(spinner.getValue().equalsIgnoreCase("edad")){
+
+        if(spinner.getValue().equalsIgnoreCase("edades")){
             edadPie.setVisible(true);
             nacionalidadPie.setVisible(false);
         }
-        else if(spinner.getValue().equalsIgnoreCase("nacionalidad")){
+        else if(spinner.getValue().equalsIgnoreCase("nacionalidades")){
             edadPie.setVisible(false);
             nacionalidadPie.setVisible(true);
         }

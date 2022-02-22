@@ -15,10 +15,16 @@ public class InfoController implements Initializable {
     @FXML private ImageView image;
 
     public void initInfo(){
-        System.out.println("hola");
-        text.setText(Intercambio.getInstance().getPersona().toString2());
-        System.out.println(Intercambio.getInstance().getPersona().getPicture());
-        image.setImage(new Image(Intercambio.getInstance().getPersona().getPicture()));
+        if(Intercambio.getInstance().getPersona()!=null){
+            System.out.println("hola");
+            text.setText(Intercambio.getInstance().getPersona().toString2());
+            System.out.println(Intercambio.getInstance().getPersona().getPicture());
+            System.out.println(Intercambio.getInstance().getPersona());
+            image.setImage(new Image(Intercambio.getInstance().getPersona().getPicture()));
+        }else{
+            text.setText("Seleccione una persona de la lista por favor");
+            image.setImage(new Image("https://acegif.com/wp-content/uploads/loading-46.gif"));
+        }
     }
 
     @Override

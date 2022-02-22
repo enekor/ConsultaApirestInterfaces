@@ -15,7 +15,7 @@ public class RestToModel {
         Persona person = null;
         Response<Person> res = crud.getPerson().execute();
         if(res.body() != null) {
-            System.out.println("Persona adquirida");
+            System.out.println("Persona adquirida de la DeepWeb, precio: "+(int)(Math.random()*10)+1+" kebaps");
             person = mapper.resultToPerson(res.body().results.get(0));
         }else{
             throw new Exception("fallo al recuperar informacion de la api");
